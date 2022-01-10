@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace BudgetTracker
 {
-    public partial class Form1 : Form
+    public partial class LoadCreateForm : Form
     {
-        public Form1()
+        public LoadCreateForm()
         {
             InitializeComponent();
+        }
+
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

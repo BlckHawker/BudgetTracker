@@ -47,14 +47,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="LoadCreatePlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LoadCreatePlan.Designer.cs">
+      <DependentUpon>LoadCreatePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanViewerForm.Designer.cs">
+      <DependentUpon>PlanViewerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transaction.cs" />
+    <EmbeddedResource Include="LoadCreatePlan.resx">
+      <DependentUpon>LoadCreatePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanViewerForm.resx">
+      <DependentUpon>PlanViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
