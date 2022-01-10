@@ -23,6 +23,13 @@ namespace BudgetTracker
             Time = DateTime.Now;
         }
 
+        public Transaction(Decimal amount, DateTime date)
+        {
+            Comment = "";
+            Amount = amount;
+            Time = date;
+        }
+
         public Transaction(Decimal amount, string comment)
         {
             Comment = comment;
