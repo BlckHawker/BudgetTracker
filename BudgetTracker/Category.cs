@@ -43,47 +43,6 @@ namespace BudgetTracker
         /// Increases the amount of money to this category by taking a percentage of the given amount
         /// </summary>
         /// <param name="amount">The amount of money that was added to total funds</param
-        public string Deposit(Decimal amount)
-        {
-            //the amount of money this category will take
-            //will always round down, so price may vary a little
-
-            Decimal categoryAmount = decimal.Round(amount * Percentage, 2, MidpointRounding.ToEven);
-
-            CurrentFunds += categoryAmount;
-
-            TransactionList.Add(new Transaction(categoryAmount));
-
-        }
-
-
-        public string Deposit(Decimal amount, string comment)
-        {
-            //the amount of money this category will take
-            //will always round down, so price may vary a little
-
-            Decimal categoryAmount = decimal.Round(amount * Percentage, 2, MidpointRounding.ToEven);
-
-            CurrentFunds += categoryAmount;
-
-            TransactionList.Add(new Transaction(categoryAmount, comment));
-
-        }
-
-        
-        public string Deposit(Decimal amount, DateTime date)
-        {
-            //the amount of money this category will take
-            //will always round down, so price may vary a little
-
-            Decimal categoryAmount = decimal.Round(amount * Percentage, 2, MidpointRounding.ToEven);
-
-            CurrentFunds += categoryAmount;
-
-            TransactionList.Add(new Transaction(categoryAmount, date));
-
-        }
-
         public string Deposit(Decimal amount, DateTime date, string comment)
         {
             //the amount of money this category will take
@@ -93,22 +52,11 @@ namespace BudgetTracker
 
             CurrentFunds += categoryAmount;
 
-            TransactionList.Add(new Transaction(comment,amount,date));
-        }
+            Transaction transaction = new Transaction(comment, amount, date);
 
-        public string Withdraw(Decimal amount)
-        {
-            CurrentFunds -= amount;
-        }
+            TransactionList.Add(transaction);
 
-        public string Withdraw(Decimal amount, string comment)
-        {
-            CurrentFunds -= amount;
-        }
-
-        public string Withdraw(Decimal amount, DateTime date)
-        {
-            CurrentFunds -= amount;
+            return $"{transaction.PrintTransactionInfo()} to {Name}, {transaction.Comment}";
         }
 
         public string Withdraw(Decimal amount, DateTime date, string comment)

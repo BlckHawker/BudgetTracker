@@ -10,7 +10,7 @@ namespace BudgetTracker
     //how much it cost, and when it happen
     class Transaction
     {
-        private string Comment { get; }
+        public string Comment { get; }
 
         private Decimal Amount { get; }
 
@@ -56,25 +56,13 @@ namespace BudgetTracker
         /// </summary>
         public string PrintTransactionInfo()
         {
-            //depositing money with comment
-            if (Amount > 0 && Comment != "")
-            { 
-                return $"{Time}: Deposited {Amount}, {Comment}";
-            }
-
-            //withdrawing money with comment
-            if (Comment != "")
-            { 
-                return $"{Time}: Withdrew {Amount}, {Comment}";
-            }
-
-            //deposting money without comment
-            if (Amount < 0)
+            //depositing money
+            if (Amount > 0)
             { 
                 return $"{Time}: Deposited {Amount}";
             }
 
-            //withdrawing money with comment
+            //withdrawing money
             return $"{Time}: Withdrew {Amount}";
         }
     }
