@@ -52,7 +52,7 @@ namespace BudgetTracker
 
             CurrentFunds += categoryAmount;
 
-            Transaction transaction = new Transaction(comment, amount, date);
+            Transaction transaction = new Transaction(comment, categoryAmount, date);
 
             TransactionList.Add(transaction);
 
