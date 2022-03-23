@@ -54,11 +54,23 @@ namespace BudgetTracker
         /// <summary>
         /// Gives a summary of this transaction
         /// </summary>
-        public string PrintTransactionInfo()
+        public string GetTransactionInfo(string categoryName)
         {
             //depositing money
             if (Amount > 0)
-            { 
+            {
+                return GetTransactionInfo() + $" to {categoryName} budget";
+            }
+
+            //withdrawing money
+            return GetTransactionInfo() +  $" from {categoryName} budget";
+        }
+
+        public string GetTransactionInfo()
+        {
+            //depositing money
+            if (Amount > 0)
+            {
                 return $"{Time}: Deposited {Amount}";
             }
 
