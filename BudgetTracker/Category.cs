@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace BudgetTracker
 {
+    /// <summary>
+    /// Name: Nya Bentley
+    /// Date: 3/23/22
+    /// Purpose: Creaetes a sub section that will hold a list of tranastcion
+    ///          Kinda like its own budget
+    /// </summary>
     class Category
     {
         //name of the category
@@ -16,7 +22,7 @@ namespace BudgetTracker
 
         //the amount of money that will be deposited into this category
         //(can only be between 0 and 100 inclusivly)
-        private Decimal Percentage;
+        public Decimal Percentage { get; }
 
         //a list of all transaction that happen in this category
         private List<Transaction> TransactionList;
@@ -32,6 +38,8 @@ namespace BudgetTracker
             Name = name;
             Percentage = percentage;
             Money = 0;
+
+            TransactionList = new List<Transaction>();
         }
 
         /// <summary>
@@ -51,7 +59,7 @@ namespace BudgetTracker
         /// </summary>
         /// <param name="amount">the amount of money to take</param>
         /// <returns></returns>
-        private Transaction Deposit(Decimal amount)
+        public Transaction Deposit(Decimal amount)
         {
             Transaction t = new Transaction(amount);
 
@@ -60,7 +68,7 @@ namespace BudgetTracker
             return t;
         }
 
-        private Transaction Deposit(Decimal amount, string comment)
+        public Transaction Deposit(Decimal amount, string comment)
         {
             Transaction t = new Transaction(amount, comment);
 
@@ -69,7 +77,7 @@ namespace BudgetTracker
             return t;
         }
 
-        private Transaction Deposit(Decimal amount, DateTime dateTime)
+        public Transaction Deposit(Decimal amount, DateTime dateTime)
         {
             Transaction t = new Transaction(amount, dateTime);
 
@@ -78,7 +86,7 @@ namespace BudgetTracker
             return t;
         }
 
-        private Transaction Deposit(Decimal amount, string comment, DateTime dateTime)
+        public Transaction Deposit(Decimal amount, string comment, DateTime dateTime)
         {
             Transaction t = new Transaction(amount, comment, dateTime);
 
@@ -87,22 +95,22 @@ namespace BudgetTracker
             return t;
         }
 
-        private Transaction Withdraw(Decimal amount)
+        public Transaction Withdraw(Decimal amount)
         {
             return Deposit(-amount);
         }
 
-        private Transaction Withdraw(Decimal amount, string comment)
+        public Transaction Withdraw(Decimal amount, string comment)
         {
             return Deposit(-amount, comment);
         }
 
-        private Transaction Withdraw(Decimal amount, DateTime dateTime)
+        public Transaction Withdraw(Decimal amount, DateTime dateTime)
         {
             return Deposit(-amount, dateTime);
         }
 
-        private Transaction Withdraw(Decimal amount, string comment, DateTime dateTime)
+        public Transaction Withdraw(Decimal amount, string comment, DateTime dateTime)
         {
             return Deposit(-amount, comment, dateTime);
         }

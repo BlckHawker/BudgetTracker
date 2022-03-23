@@ -17,10 +17,6 @@ namespace BudgetTracker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoadCreateForm());
-
-            Transaction testTransaction = new Transaction(-100, "Test comment", new DateTime(2022, 2, 12));
-
-            Console.WriteLine("\n" + testTransaction.PrintTransactionInfo() + "\n"); 
         }
     }
 }

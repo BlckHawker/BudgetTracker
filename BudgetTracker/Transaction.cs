@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace BudgetTracker
 {
-    //Gives information about what was bought,
-    //how much it cost, and when it happen
+    /// <summary>
+    /// Name: Nya Bentley
+    /// Date: 3/14/22
+    /// Purpose: Creates a summary of a transaction
+    /// </summary>
     class Transaction
     {
         public string Comment { get; }
