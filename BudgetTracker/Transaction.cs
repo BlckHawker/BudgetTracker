@@ -6,66 +6,64 @@ using System.Threading.Tasks;
 
 namespace BudgetTracker
 {
-    /// <summary>
-    /// Author: Nya Bentley
-    /// Date: 3/14/22
-    /// Purpose: Gives a summary of a transaction
-    /// </summary>
+    //Gives information about what was bought,
+    //how much it cost, and when it happen
     class Transaction
     {
-        //How much money was deposited/withdrawn
-        private Decimal Amount { get; set; }
+        public string Comment { get; }
 
-        //A reminder for why this transaction occured
-        private string Comment { get; set; }
+        private Decimal Amount { get; }
 
-        //the date the transaction occured
-        private DateTime Date {get; set;}
+        private DateTime Time { get; }
 
-        /// <summary>
-        /// Creates a transaction with no comment and the date
-        /// being the current time
-        /// </summary>
-        /// <param name="amount"></param>
-        public Transaction(Decimal amount) 
-        : this(amount, "", DateTime.Now)
+        public Transaction(Decimal amount)
         {
-
-        }
-
-        /// <summary>
-        /// Creates a transaction with a comment with the date
-        /// being the current time
-        /// </summary>
-        /// <param name="amount"></param>
-        /// <param name="comment"></param>
-        public Transaction(Decimal amount, string comment)
-        : this(amount, comment, DateTime.Now)
-        { 
-        
-        }
-
-        /// <summary>
-        /// Creates a transaction given an amount, comment, and date and time
-        /// </summary>
-        /// <param name="amount"></param>
-        /// <param name="comment"></param>
-        /// <param name="date"></param>
-        public Transaction(Decimal amount, string comment, DateTime date)
-        {
+            Comment = "";
             Amount = amount;
-            Comment = comment;
-            Date = date;
+            Time = DateTime.Now;
         }
 
-        public string PrintTransaction()
+        public Transaction(Decimal amount, DateTime date)
         {
+            Comment = "";
+            Amount = amount;
+            Time = date;
+        }
+
+        public Transaction(Decimal amount, string comment)
+        {
+            Comment = comment;
+            Amount = amount;
+            Time = DateTime.Now;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="comment">the reason of this transaction</param>
+        /// <param name="amount">How much money the item cost minimum amount is 0.01</param>
+        /// <param name="time">The date and time the transaction happen</param>
+        public Transaction(Decimal amount, string comment, DateTime time)
+        {
+            Comment = comment;
+            Amount = amount;
+            Time = time;
+        }
+
+
+        /// <summary>
+        /// Gives a summary of this transaction
+        /// </summary>
+        public string PrintTransactionInfo()
+        {
+            //depositing money
             if (Amount > 0)
-            {
-                return $"{Date}: Deposited {Amount}. {Comment}";
+            { 
+                return $"{Time}: Deposited {Amount}";
             }
 
-            return $"{Date}: Withdrew {Amount}. {Comment}";
+            //withdrawing money
+            return $"{Time}: Withdrew {Amount}";
         }
     }
 }
