@@ -22,11 +22,13 @@ namespace BudgetTracker
         {
             InitializeComponent();
             Plan = plan;
+
+            label1.Text = "Plan Name: " + plan.Name;
         }
 
         private void addCategoryButton_Click(object sender, EventArgs e)
         {
-            AddCategoryForm addCategoryForm = new AddCategoryForm();
+            AddCategoryForm addCategoryForm = new AddCategoryForm(Plan);
 
             addCategoryForm.ShowDialog();
         }

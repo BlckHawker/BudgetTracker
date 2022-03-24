@@ -14,7 +14,7 @@ namespace BudgetTracker
     public class Plan
     {
         //the name of the plan
-        private string Name;
+        public string Name { get; }
 
         //the amount of money the plan has
         Decimal TotalMoney;

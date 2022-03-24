@@ -16,5 +16,13 @@ namespace BudgetTracker
         {
             InitializeComponent();
         }
+
+        private void createPlanButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            CreatePlanForm createPlanForm = new CreatePlanForm();
+            createPlanForm.Show();
+        }
     }
 }

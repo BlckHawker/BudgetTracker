@@ -11,7 +11,7 @@ namespace BudgetTracker
     /// Date: 3/14/22
     /// Purpose: Creates a summary of a transaction
     /// </summary>
-    class Transaction
+    public class Transaction
     {
         public string Comment { get; }
 

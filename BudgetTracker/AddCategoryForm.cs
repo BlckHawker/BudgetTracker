@@ -116,10 +116,8 @@ namespace BudgetTracker
 
             else
             {
-                if (results == DialogResult.Yes)
-                {
-                    Plan.CategoryList.Add(new Category(categoryNameTextBox.Text, totalPercentageRemaining));
-                }
+
+                Plan.CategoryList.Add(new Category(categoryNameTextBox.Text, percentage));
 
                 this.Close();
             }

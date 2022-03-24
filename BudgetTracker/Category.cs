@@ -65,6 +65,8 @@ namespace BudgetTracker
 
             TransactionList.Add(t);
 
+            Money += amount;
+
             return t;
         }
 
@@ -73,6 +75,8 @@ namespace BudgetTracker
             Transaction t = new Transaction(amount, comment);
 
             TransactionList.Add(t);
+
+            Money += amount;
 
             return t;
         }
@@ -83,6 +87,8 @@ namespace BudgetTracker
 
             TransactionList.Add(t);
 
+            Money += amount;
+
             return t;
         }
 
@@ -92,26 +98,36 @@ namespace BudgetTracker
 
             TransactionList.Add(t);
 
+            Money += amount;
+
             return t;
         }
 
         public Transaction Withdraw(Decimal amount)
         {
+            Money -= amount;
+
             return Deposit(-amount);
         }
 
         public Transaction Withdraw(Decimal amount, string comment)
         {
+            Money -= amount;
+
             return Deposit(-amount, comment);
         }
 
         public Transaction Withdraw(Decimal amount, DateTime dateTime)
         {
+            Money -= amount;
+
             return Deposit(-amount, dateTime);
         }
 
         public Transaction Withdraw(Decimal amount, string comment, DateTime dateTime)
         {
+            Money -= amount;
+
             return Deposit(-amount, comment, dateTime);
         }
     }
