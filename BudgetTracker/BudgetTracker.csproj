@@ -46,7 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCategoryForm.Designer.cs">
+      <DependentUpon>AddCategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs" />
+    <Compile Include="ChangeAllPercentagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeAllPercentagesForm.Designer.cs">
+      <DependentUpon>ChangeAllPercentagesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateLoadPlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +75,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaction.cs" />
+    <EmbeddedResource Include="AddCategoryForm.resx">
+      <DependentUpon>AddCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeAllPercentagesForm.resx">
+      <DependentUpon>ChangeAllPercentagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanOverviewForm.resx">
+      <DependentUpon>PlanOverviewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

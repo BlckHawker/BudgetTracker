@@ -11,7 +11,7 @@ namespace BudgetTracker
     /// Date: 3/23/22
     /// Purpose: An object that holds a collection of categories
     /// </summary>
-    class Plan
+    public class Plan
     {
         //the name of the plan
         private string Name;
@@ -20,7 +20,7 @@ namespace BudgetTracker
         Decimal TotalMoney;
 
         //all the categories the plan has
-        List<Category> CategoryList;
+        public List<Category> CategoryList { get; }
 
         /// <summary>
         /// Creates a plan with one category that takes 100 percent of the money

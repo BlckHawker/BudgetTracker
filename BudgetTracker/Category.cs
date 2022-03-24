@@ -12,10 +12,10 @@ namespace BudgetTracker
     /// Purpose: Creaetes a sub section that will hold a list of tranastcion
     ///          Kinda like its own budget
     /// </summary>
-    class Category
+    public class Category
     {
         //name of the category
-        private string Name;
+        public string Name { get; }
 
         //the current amount of money this category has
         private Decimal Money;
